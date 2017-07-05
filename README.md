@@ -6,11 +6,12 @@ a raspberry 0w and sds 011 based mobile particle matter / air quality sensor
 ## dependencies:
 
 you will need the following libraries:
-gpspython3
-arrow
-flask
-bootstrap - put these files into the static folder
-jquery - put these files into the static folder
+* gpspython3
+* arrow
+* flask
+* bootstrap - put these files into the static folder
+* jquery - put these files into the static folder
 
 for more questions please contact: mail@sbamueller.de
 
+Thank you to Florian Kramer
