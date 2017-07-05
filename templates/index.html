@@ -1,0 +1,40 @@
+<html>
+<head>
+  <title>Particulate Matter Sensor</title>
+
+  <link href="/static/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="/static/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+
+  <script src="/static/js/jquery.min.js"></script>
+  <script src="/static/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="jumbotron">
+    <div class="container">
+      <h2>Status</h2>
+      <table class="table table-striped">
+        <tr><td>pm 2.5</td><td>{{ pm25 }}</td></tr> 
+        <tr><td>pm 10</td><td>{{ pm10 }}</td></tr> 
+        <tr><td>gps fix</td><td>{{ gpsfix }}</td></tr> 
+        <tr><td>lon</td><td>{{ lon }}</td></tr> 
+        <tr><td>lat</td><td>{{ lat }}</td></tr> 
+        <tr><td>alt</td><td>{{ alt }}</td></tr> 
+      </table>
+    </div>
+    <div class="container">
+      <h2>Files</h2>
+      <a href="/delete?filename=all" target="_blank">delete all</a>
+      <table class="table table-striped">
+        {% for item in files %}
+        <tr><td>{{ item[0] }}</td><td><a href="/csv?filename={{ item[1]}}" target="_blank">csv</td><td><a href="/kml?filename={{ item[1]}}" target="_blank">kml</td><td><a href="/delete?filename={{ item[1]}}" target="_blank">delete</td></tr>
+        {% endfor %}
+      </table>
+    </div>
+    <!--<div class="container">
+      <h2>Configuration</h2>
+      <input id="newpasswd" hint="wifi password"/> <button onClick="newPasswd">update password</button>
+      </div>-->
+  </div>
+</body>
+</html>
